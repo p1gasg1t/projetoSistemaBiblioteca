@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title>Página Principal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+        <!-- tudo que estiver dentro de header, está sendo modificado dentro da tag header do HTML -->
+        <!-- display: flex, é para manter os hyperlinks centralizados e mudando todas as vezes que utilizar o zoom -->
+        <!-- nav a:hover, é para mudar as propriedades dos elementos A dentro do NAV, para quando passar o mouse por cima fazer algo -->
+        <style>
+            * {
+                margin: 0 auto;
+            }
+
+            header {
+                font-family: 'Poppins', sans-serif;
+                width: 90%;
+                background-color: #fff;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+
+            }
+
+            nav {
+                width: 90%;
+                background-color: #fff;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+            nav a {
+                color: #898989;
+                text-decoration: none;
+                font-weight: 400;
+                padding: 0 10px;
+                margin: 0 30px;
+                position: relative;
+            }
+            nav a:hover {
+                color: #000;
+            }
+            nav a::before {
+                content: '';
+                position: absolute;
+                bottom: -7px;
+                left: 0;
+                width: 0%;
+                height: 3px;
+                background-color: #ee0653;
+                transition: all .5s;
+            }
+            nav a:hover::before {
+                width: 100%;
+            }
+            main {
+                width: 90%;
+                height: 500px;
+                padding: 10px;
+                background-color: #fff;
+
+            }
+            iframe{
+                border: 0px;
+                width: 100%;
+                height: 500px;
+            }
+        </style>
+
+        <!--Padding é para criar 10 pixeis para o lado; ou seja 90% + 5% + 5%-->
+
+    </head>
+    <body>
+        <header> 
+            <h1> Sistema Biblioteca </h1>
+        </header>
+        <!-- NAV é a caixinha de navegação -->
+        <nav> 
+            <!-- "a" é o hyperLink, ou seja a escrita azul que leva para outra página-->
+            <!-- cadpro.html é o link e Cadastro de Produtos é o texto que vai adquirir a propriedade de cadpro.html -->
+            <!-- target é o caminho para abrir o arquivo especificado, como foi declarado anteriormente -->
+            <!-- meu iframe tem como variavel = centro, ou seja para chamar iframe posso usar centro dentro do componente target -->
+            <a href="cadpro.html" target="centro">Cadastro de Livros</a>
+            <a href="listapro.jsp" target="centro">Buscar livros</a>
+            <a href="excpro.html" target="centro">Excluir livros</a>
+            <a href="altpro.html" target="centro">Alterar livros</a>
+        </nav>
+        <main>
+            <iframe src="apresentacao.html" name="centro"></iframe>
+        </main>
+    </body>
+</html>
